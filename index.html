@@ -25,6 +25,26 @@
     <div class="container mt-5">
       <div class="row">
         <div class="col">
+          <h2>Material Brand</h2>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col text-white" style="background: black">0</div>
+            <div class="col text-white" style="background: #001947">10</div>
+            <div class="col text-white" style="background: #002C72">20</div>
+            <div class="col text-white" style="background: #03429C">30</div>
+            <div class="col text-white" style="background: #2C5AB4">40</div>
+            <div class="col text-white" style="background: #4A74CF">50</div>
+            <div class="col" style="background: #658EEB">60</div>
+            <div class="col" style="background: #84AAFF">70</div>
+            <div class="col" style="background: #AFC6FF">80</div>
+            <div class="col" style="background: #D8E2FF">90</div>
+            <div class="col" style="background: white">100</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
           <input
             type="color"
             class="form-control form-control-color"
@@ -47,6 +67,26 @@
             <div class="col brand-80">80</div>
             <div class="col brand-90">90</div>
             <div class="col brand-100">100</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2>Material Accent</h2>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col text-white" style="background: black">0</div>
+            <div class="col text-white" style="background: #231B00">10</div>
+            <div class="col text-white" style="background: #3B2F00">20</div>
+            <div class="col text-white" style="background: #554500">30</div>
+            <div class="col text-white" style="background: #715D00">40</div>
+            <div class="col text-white" style="background: #8D7500">50</div>
+            <div class="col" style="background: #A98F12">60</div>
+            <div class="col" style="background: #C6A931">70</div>
+            <div class="col" style="background: #E3C54A">80</div>
+            <div class="col" style="background: #FFE164">90</div>
+            <div class="col" style="background: white">100</div>
           </div>
         </div>
       </div>
@@ -79,6 +119,26 @@
       </div>
       <div class="row">
         <div class="col">
+          <h2>Material Positive</h2>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col text-white" style="background: black">0</div>
+            <div class="col text-white" style="background: #012104">10</div>
+            <div class="col text-white" style="background: #003A05">20</div>
+            <div class="col text-white" style="background: #095314">30</div>
+            <div class="col text-white" style="background: #286B2A">40</div>
+            <div class="col text-white" style="background: #418540">50</div>
+            <div class="col" style="background: #5CA058">60</div>
+            <div class="col" style="background: #76BB70">70</div>
+            <div class="col" style="background: #90D889">80</div>
+            <div class="col" style="background: #ACF5A3">90</div>
+            <div class="col" style="background: white">100</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
           <input
             type="color"
             class="form-control form-control-color"
@@ -101,6 +161,26 @@
             <div class="col positive-80">80</div>
             <div class="col positive-90">90</div>
             <div class="col positive-100">100</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2>Material Negative</h2>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col text-white" style="background: black">0</div>
+            <div class="col text-white" style="background: #410001">10</div>
+            <div class="col text-white" style="background: #680003">20</div>
+            <div class="col text-white" style="background: #930007">30</div>
+            <div class="col text-white" style="background: #BA1B1B">40</div>
+            <div class="col text-white" style="background: #DD3730">50</div>
+            <div class="col" style="background: #FF5348">60</div>
+            <div class="col" style="background: #FF897A">70</div>
+            <div class="col" style="background: #FFB4A9">80</div>
+            <div class="col" style="background: #FFDAD4">90</div>
+            <div class="col" style="background: white">100</div>
           </div>
         </div>
       </div>
@@ -257,9 +337,9 @@
       function update(e) {
         var name = e.id;
         var color = e.value;
-        var bez = chroma.scale(["black", color, "white"]).correctLightness();
+        var bez = chroma.scale(["black", color, "white"]).domain([0,100]).mode('hsl').gamma(0.8).correctLightness();
         for (var i = 0; i <= 100; i += 10) {
-          $("." + name + "-" + i).css("backgroundColor", bez(i / 100).hex());
+          $("." + name + "-" + i).css("backgroundColor", bez(i).hex());
         }
       }
     </script>
