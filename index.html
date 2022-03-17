@@ -22,27 +22,7 @@
     </style>
   </head>
   <body>
-    <div class="container-fluid mt-5">
-      <div class="row">
-        <div class="col-4">
-          <h2>Material Brand</h2>
-        </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col text-white" style="background: black">0</div>
-            <div class="col text-white" style="background: #001947">10</div>
-            <div class="col text-white" style="background: #002c72">20</div>
-            <div class="col text-white" style="background: #03429c">30</div>
-            <div class="col text-white" style="background: #2c5ab4">40</div>
-            <div class="col text-white" style="background: #4a74cf">50</div>
-            <div class="col" style="background: #658eeb">60</div>
-            <div class="col" style="background: #84aaff">70</div>
-            <div class="col" style="background: #afc6ff">80</div>
-            <div class="col" style="background: #d8e2ff">90</div>
-            <div class="col" style="background: white">100</div>
-          </div>
-        </div>
-      </div>
+    <div class="container mt-5">
       <div class="row">
         <div class="col-4">
           <input
@@ -54,342 +34,108 @@
           />
           <h2>Brand</h2>
         </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col brand-0 text-white" data-no="0"></div>
-            <div class="col brand-10 text-white" data-no="10"></div>
-            <div class="col brand-20 text-white" data-no="20"></div>
-            <div class="col brand-30 text-white" data-no="30"></div>
-            <div class="col brand-40 text-white" data-no="40"></div>
-            <div class="col brand-50 text-white" data-no="50"></div>
-            <div class="col brand-60" data-no="60"></div>
-            <div class="col brand-70" data-no="70"></div>
-            <div class="col brand-80" data-no="80"></div>
-            <div class="col brand-90" data-no="90"></div>
-            <div class="col brand-100" data-no="100"></div>
+      </div>
+      <div class="light">
+        <h2>Light Theme</h2>
+        <div class="row">
+          <div class="col primary text-white">Primary</div>
+          <div class="col onPrimary">On Primary</div>
+          <div class="col primaryContainer">Primary Container</div>
+          <div class="col onPrimaryContainer text-white">
+            On Primary Container
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <h2>Material Accent</h2>
-        </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col text-white" style="background: black">0</div>
-            <div class="col text-white" style="background: #231b00">10</div>
-            <div class="col text-white" style="background: #3b2f00">20</div>
-            <div class="col text-white" style="background: #554500">30</div>
-            <div class="col text-white" style="background: #715d00">40</div>
-            <div class="col text-white" style="background: #8d7500">50</div>
-            <div class="col" style="background: #a98f12">60</div>
-            <div class="col" style="background: #c6a931">70</div>
-            <div class="col" style="background: #e3c54a">80</div>
-            <div class="col" style="background: #ffe164">90</div>
-            <div class="col" style="background: white">100</div>
+        <div class="row">
+          <div class="col secondary text-white">Secondary</div>
+          <div class="col onSecondary">On Secondary</div>
+          <div class="col secondaryContainer">Secondary Container</div>
+          <div class="col onSecondaryContainer text-white">
+            On Secondary Container
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <input
-            type="color"
-            class="form-control form-control-color"
-            id="accent"
-            value="#705d00"
-            onchange="update(this)"
-          />
-          <h2>Accent</h2>
-        </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col accent-0 text-white" data-no="0"></div>
-            <div class="col accent-10 text-white" data-no="10"></div>
-            <div class="col accent-20 text-white" data-no="20"></div>
-            <div class="col accent-30 text-white" data-no="30"></div>
-            <div class="col accent-40 text-white" data-no="40"></div>
-            <div class="col accent-50 text-white" data-no="50"></div>
-            <div class="col accent-60" data-no="60"></div>
-            <div class="col accent-70" data-no="70"></div>
-            <div class="col accent-80" data-no="80"></div>
-            <div class="col accent-90" data-no="90"></div>
-            <div class="col accent-100" data-no="100"></div>
+        <div class="row">
+          <div class="col tertiary text-white">Tertiary</div>
+          <div class="col onTertiary">On Tertiary</div>
+          <div class="col tertiaryContainer">Tertiary Container</div>
+          <div class="col onTertiaryContainer text-white">
+            On Tertiary Container
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <h2>Material Positive</h2>
+        <div class="row">
+          <div class="col error text-white">Error</div>
+          <div class="col onError">On Error</div>
+          <div class="col errorContainer">Error Container</div>
+          <div class="col onErrorContainer text-white">On Error Container</div>
         </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col text-white" style="background: black">0</div>
-            <div class="col text-white" style="background: #012104">10</div>
-            <div class="col text-white" style="background: #003a05">20</div>
-            <div class="col text-white" style="background: #095314">30</div>
-            <div class="col text-white" style="background: #286b2a">40</div>
-            <div class="col text-white" style="background: #418540">50</div>
-            <div class="col" style="background: #5ca058">60</div>
-            <div class="col" style="background: #76bb70">70</div>
-            <div class="col" style="background: #90d889">80</div>
-            <div class="col" style="background: #acf5a3">90</div>
-            <div class="col" style="background: white">100</div>
+        <div class="row">
+          <div class="col background">Background</div>
+          <div class="col onBackground text-white">On Background</div>
+          <div class="col surface">Surface</div>
+          <div class="col onSurface text-white">On Surface</div>
+        </div>
+        <div class="row">
+          <div class="col-6 outline text-white">Outline</div>
+          <div class="col surfaceVariant">Surface-Variant</div>
+          <div class="col onSurfaceVariant text-white">On Surface-Variant</div>
+        </div>
+      </div>
+      <div class="dark">
+        <h2>Dark Theme</h2>
+        <div class="row">
+          <div class="col primary text-white">Primary</div>
+          <div class="col onPrimary">On Primary</div>
+          <div class="col primaryContainer">Primary Container</div>
+          <div class="col onPrimaryContainer text-white">
+            On Primary Container
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <input
-            type="color"
-            class="form-control form-control-color"
-            id="positive"
-            value="#286b2a"
-            onchange="update(this)"
-          />
-          <h2>Positive</h2>
-        </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col positive-0 text-white" data-no="0"></div>
-            <div class="col positive-10 text-white" data-no="10"></div>
-            <div class="col positive-20 text-white" data-no="20"></div>
-            <div class="col positive-30 text-white" data-no="30"></div>
-            <div class="col positive-40 text-white" data-no="40"></div>
-            <div class="col positive-50 text-white" data-no="50"></div>
-            <div class="col positive-60" data-no="60"></div>
-            <div class="col positive-70" data-no="70"></div>
-            <div class="col positive-80" data-no="80"></div>
-            <div class="col positive-90" data-no="90"></div>
-            <div class="col positive-100" data-no="100"></div>
+        <div class="row">
+          <div class="col secondary text-white">Secondary</div>
+          <div class="col onSecondary">On Secondary</div>
+          <div class="col secondaryContainer">Secondary Container</div>
+          <div class="col onSecondaryContainer text-white">
+            On Secondary Container
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <h2>Material Negative</h2>
-        </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col text-white" style="background: black">0</div>
-            <div class="col text-white" style="background: #410001">10</div>
-            <div class="col text-white" style="background: #680003">20</div>
-            <div class="col text-white" style="background: #930007">30</div>
-            <div class="col text-white" style="background: #ba1b1b">40</div>
-            <div class="col text-white" style="background: #dd3730">50</div>
-            <div class="col" style="background: #ff5348">60</div>
-            <div class="col" style="background: #ff897a">70</div>
-            <div class="col" style="background: #ffb4a9">80</div>
-            <div class="col" style="background: #ffdad4">90</div>
-            <div class="col" style="background: white">100</div>
+        <div class="row">
+          <div class="col tertiary text-white">Tertiary</div>
+          <div class="col onTertiary">On Tertiary</div>
+          <div class="col tertiaryContainer">Tertiary Container</div>
+          <div class="col onTertiaryContainer text-white">
+            On Tertiary Container
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <input
-            type="color"
-            class="form-control form-control-color"
-            id="negative"
-            value="#ba1b1b"
-            onchange="update(this)"
-          />
-          <h2>Negative</h2>
+        <div class="row">
+          <div class="col error text-white">Error</div>
+          <div class="col onError">On Error</div>
+          <div class="col errorContainer">Error Container</div>
+          <div class="col onErrorContainer text-white">On Error Container</div>
         </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col negative-0 text-white" data-no="0"></div>
-            <div class="col negative-10 text-white" data-no="10"></div>
-            <div class="col negative-20 text-white" data-no="20"></div>
-            <div class="col negative-30 text-white" data-no="30"></div>
-            <div class="col negative-40 text-white" data-no="40"></div>
-            <div class="col negative-50 text-white" data-no="50"></div>
-            <div class="col negative-60" data-no="60"></div>
-            <div class="col negative-70" data-no="70"></div>
-            <div class="col negative-80" data-no="80"></div>
-            <div class="col negative-90" data-no="90"></div>
-            <div class="col negative-100" data-no="100"></div>
-          </div>
+        <div class="row">
+          <div class="col background">Background</div>
+          <div class="col onBackground text-white">On Background</div>
+          <div class="col surface">Surface</div>
+          <div class="col onSurface text-white">On Surface</div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <h2>Material Information</h2>
+        <div class="row">
+          <div class="col-6 outline text-white">Outline</div>
+          <div class="col surfaceVariant">Surface-Variant</div>
+          <div class="col onSurfaceVariant text-white">On Surface-Variant</div>
         </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col text-white" style="background: black">0</div>
-            <div class="col text-white" style="background: #001e2b">10</div>
-            <div class="col text-white" style="background: #003549">20</div>
-            <div class="col text-white" style="background: #004d68">30</div>
-            <div class="col text-white" style="background: #006688">40</div>
-            <div class="col text-white" style="background: #0080aa">50</div>
-            <div class="col" style="background: #199bca">60</div>
-            <div class="col" style="background: #47b7e7">70</div>
-            <div class="col" style="background: #6fd2ff">80</div>
-            <div class="col" style="background: #bee8ff">90</div>
-            <div class="col" style="background: white">100</div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <input
-            type="color"
-            class="form-control form-control-color"
-            id="information"
-            value="#006687"
-            onchange="update(this)"
-          />
-          <h2>Information</h2>
-        </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col information-0 text-white" data-no="0"></div>
-            <div class="col information-10 text-white" data-no="10"></div>
-            <div class="col information-20 text-white" data-no="20"></div>
-            <div class="col information-30 text-white" data-no="30"></div>
-            <div class="col information-40 text-white" data-no="40"></div>
-            <div class="col information-50 text-white" data-no="50"></div>
-            <div class="col information-60" data-no="60"></div>
-            <div class="col information-70" data-no="70"></div>
-            <div class="col information-80" data-no="80"></div>
-            <div class="col information-90" data-no="90"></div>
-            <div class="col information-100" data-no="100"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-4">
-          <h2>Material Warning</h2>
-        </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col text-white" style="background: black">0</div>
-            <div class="col text-white" style="background: #370e00">10</div>
-            <div class="col text-white" style="background: #591c00">20</div>
-            <div class="col text-white" style="background: #7e2b00">30</div>
-            <div class="col text-white" style="background: #a53d00">40</div>
-            <div class="col text-white" style="background: #c5541b">50</div>
-            <div class="col" style="background: #e76d33">60</div>
-            <div class="col" style="background: #ff8c56">70</div>
-            <div class="col" style="background: #ffb595">80</div>
-            <div class="col" style="background: #ffdbcc">90</div>
-            <div class="col" style="background: white">100</div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <input
-            type="color"
-            class="form-control form-control-color"
-            id="warning"
-            value="#a53d00"
-            onchange="update(this)"
-          />
-          <h2>Warning</h2>
-        </div>
-        <div class="col-8">
-          <div class="row">
-            <div class="col warning-0 text-white" data-no="0"></div>
-            <div class="col warning-10 text-white" data-no="10"></div>
-            <div class="col warning-20 text-white" data-no="20"></div>
-            <div class="col warning-30 text-white" data-no="30"></div>
-            <div class="col warning-40 text-white" data-no="40"></div>
-            <div class="col warning-50 text-white" data-no="50"></div>
-            <div class="col warning-60" data-no="60"></div>
-            <div class="col warning-70" data-no="70"></div>
-            <div class="col warning-80" data-no="80"></div>
-            <div class="col warning-90" data-no="90"></div>
-            <div class="col warning-100" data-no="100"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div data-type="result" class="col brand-40 text-white">brand</div>
-        <div data-type="result" class="col brand-30 text-white">brand-strong</div>
-        <div data-type="result" class="col brand-100">on-brand</div>
-        <div data-type="result" class="col brand-90">brand-container</div>
-        <div data-type="result" class="col brand-80">brand-container-strong</div>
-        <div data-type="result" class="col brand-10 text-white">on-brand-container</div>
-      </div>
-      <div class="row">
-        <div data-type="result" class="col accent-40 text-white">accent</div>
-        <div data-type="result" class="col accent-30 text-white">accent-strong</div>
-        <div data-type="result" class="col accent-100">on-accent</div>
-        <div data-type="result" class="col accent-90">accent-container</div>
-        <div data-type="result" class="col accent-80">accent-container-strong</div>
-        <div data-type="result" class="col accent-10 text-white">on-accent-container</div>
-      </div>
-      <div class="row">
-        <div data-type="result" class="col positive-40 text-white">positive</div>
-        <div data-type="result" class="col positive-30 text-white">positive-strong</div>
-        <div data-type="result" class="col positive-100">on-positive</div>
-        <div data-type="result" class="col positive-90">positive-container</div>
-        <div data-type="result" class="col positive-80">positive-container-strong</div>
-        <div data-type="result" class="col positive-10 text-white">on-positive-container</div>
-      </div>
-      <div class="row">
-        <div data-type="result" class="col negative-40 text-white">negative</div>
-        <div data-type="result" class="col negative-30 text-white">negative-strong</div>
-        <div data-type="result" class="col negative-100">on-negative</div>
-        <div data-type="result" class="col negative-90">negative-container</div>
-        <div data-type="result" class="col negative-80">negative-container-strong</div>
-        <div data-type="result" class="col negative-10 text-white">on-negative-container</div>
-      </div>
-      <div class="row">
-        <div data-type="result" class="col information-40 text-white">information</div>
-        <div data-type="result" class="col information-30 text-white">information-strong</div>
-        <div data-type="result" class="col information-100">on-information</div>
-        <div data-type="result" class="col information-90">information-container</div>
-        <div data-type="result" class="col information-80">information-container-strong</div>
-        <div data-type="result" class="col information-10 text-white">
-          on-information-container
-        </div>
-      </div>
-      <div class="row">
-        <div data-type="result" class="col warning-40 text-white">warning</div>
-        <div data-type="result" class="col warning-30 text-white">warning-strong</div>
-        <div data-type="result" class="col warning-100">on-warning</div>
-        <div data-type="result" class="col warning-90">warning-container</div>
-        <div data-type="result" class="col warning-80">warning-container-strong</div>
-        <div data-type="result" class="col warning-10 text-white">on-warning-container</div>
       </div>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/chroma-js@2.4.2/chroma.min.js"
-      integrity="sha256-oZqg3zt5dAKHJLJmbYMRoias7cZakJR8e8Vu7LmjZ60="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="dist/js/material-color-utilities-webpack.js"></script>
     <script>
       update(document.getElementById("brand"));
-      update(document.getElementById("accent"));
-      update(document.getElementById("positive"));
-      update(document.getElementById("negative"));
-      update(document.getElementById("information"));
-      update(document.getElementById("warning"));
       function update(e) {
-        var name = e.id;
-        var color = e.value;
-        var bez = chroma
-          .scale(["black", color, "white"])
-          .domain([0, 100])
-          .mode("hsl")
-          .gamma(0.8)
-          .correctLightness();
-        for (var i = 0; i <= 100; i += 10) {
-          var c = bez(i).hex();
-          var no = $("." + name + "-" + i).data("no");
-          $("." + name + "-" + i).css("backgroundColor", c);
-          $("." + name + "-" + i + "[data-no]").html(no + "<br/>" + c);
-        }
+        var result = themeFromSourceColor(e.value);
+        Object.entries(result.light).forEach(([key, value]) => {
+          $(".light ." + key).css("background-color", value);
+        });
+        Object.entries(result.dark).forEach(([key, value]) => {
+          $(".dark ." + key).css("background-color", value);
+        });
       }
     </script>
   </body>
