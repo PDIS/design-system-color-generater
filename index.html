@@ -19,6 +19,9 @@
         width: 3rem !important;
         display: inline-block !important;
       }
+      .col {
+        font-size: 10px;
+      }
     </style>
   </head>
   <body>
@@ -28,7 +31,7 @@
           <input
             type="color"
             class="form-control form-control-color"
-            id="brand"
+            id="negative"
             value="#2c5ab4"
             onchange="update(this)"
           />
@@ -38,96 +41,133 @@
       <div class="light">
         <h2>Light Theme</h2>
         <div class="row">
-          <div class="col primary text-white">Primary</div>
-          <div class="col onPrimary">On Primary</div>
-          <div class="col primaryContainer">Primary Container</div>
-          <div class="col onPrimaryContainer text-white">
-            On Primary Container
+          <div class="col brand text-white">Brand</div>
+          <div class="col brand-strong text-white">Brand Strong</div>
+          <div class="col on-brand">On Brand</div>
+          <div class="col brand-container">Brand Container</div>
+          <div class="col brand-container-strong">Brand Container Strong</div>
+          <div class="col on-brand-container text-white">
+            On Brand Container
           </div>
         </div>
         <div class="row">
-          <div class="col secondary text-white">Secondary</div>
-          <div class="col onSecondary">On Secondary</div>
-          <div class="col secondaryContainer">Secondary Container</div>
-          <div class="col onSecondaryContainer text-white">
-            On Secondary Container
+          <div class="col accent text-white">Accent</div>
+          <div class="col accent-strong text-white">Accent Strong</div>
+          <div class="col on-accent">On Accent</div>
+          <div class="col accent-container">Accent Container</div>
+          <div class="col accent-container-strong">Accent Container Strong</div>
+          <div class="col on-accent-container text-white">
+            On Accent Container
           </div>
         </div>
         <div class="row">
-          <div class="col tertiary text-white">Tertiary</div>
-          <div class="col onTertiary">On Tertiary</div>
-          <div class="col tertiaryContainer">Tertiary Container</div>
-          <div class="col onTertiaryContainer text-white">
-            On Tertiary Container
+          <div class="col negative text-white">Negative</div>
+          <div class="col negative-strong text-white">Negative Strong</div>
+          <div class="col on-negative">On Negative</div>
+          <div class="col negative-container">Negative Container</div>
+          <div class="col negative-container-strong">Negative Container Strong</div>
+          <div class="col on-negative-container text-white">
+            On Negative Container
           </div>
-        </div>
-        <div class="row">
-          <div class="col error text-white">Error</div>
-          <div class="col onError">On Error</div>
-          <div class="col errorContainer">Error Container</div>
-          <div class="col onErrorContainer text-white">On Error Container</div>
-        </div>
-        <div class="row">
-          <div class="col background">Background</div>
-          <div class="col onBackground text-white">On Background</div>
-          <div class="col surface">Surface</div>
-          <div class="col onSurface text-white">On Surface</div>
-        </div>
-        <div class="row">
-          <div class="col-6 outline text-white">Outline</div>
-          <div class="col surfaceVariant">Surface-Variant</div>
-          <div class="col onSurfaceVariant text-white">On Surface-Variant</div>
         </div>
       </div>
       <div class="dark">
         <h2>Dark Theme</h2>
         <div class="row">
-          <div class="col primary text-white">Primary</div>
-          <div class="col onPrimary">On Primary</div>
-          <div class="col primaryContainer">Primary Container</div>
-          <div class="col onPrimaryContainer text-white">
-            On Primary Container
+          <div class="col brand">Brand</div>
+          <div class="col brand-strong">Brand Strong</div>
+          <div class="col on-brand text-white">On Brand</div>
+          <div class="col brand-container text-white">Brand Container</div>
+          <div class="col brand-container-strong text-white">Brand Container Strong</div>
+          <div class="col on-brand-container">
+            On Brand Container
           </div>
         </div>
         <div class="row">
-          <div class="col secondary text-white">Secondary</div>
-          <div class="col onSecondary">On Secondary</div>
-          <div class="col secondaryContainer">Secondary Container</div>
-          <div class="col onSecondaryContainer text-white">
-            On Secondary Container
+          <div class="col accent">Accent</div>
+          <div class="col accent-strong">Accent Strong</div>
+          <div class="col on-accent text-white">On Accent</div>
+          <div class="col accent-container text-white">Accent Container</div>
+          <div class="col accent-container-strong text-white">Accent Container Strong</div>
+          <div class="col on-accent-container">
+            On Accent Container
           </div>
         </div>
         <div class="row">
-          <div class="col tertiary text-white">Tertiary</div>
-          <div class="col onTertiary">On Tertiary</div>
-          <div class="col tertiaryContainer">Tertiary Container</div>
-          <div class="col onTertiaryContainer text-white">
-            On Tertiary Container
+          <div class="col negative">Negative</div>
+          <div class="col negative-strong">Negative Strong</div>
+          <div class="col on-negative text-white">On Negative</div>
+          <div class="col negative-container text-white">Negative Container</div>
+          <div class="col negative-container-strong text-white">Negative Container Strong</div>
+          <div class="col on-negative-container">
+            On Negative Container
           </div>
         </div>
-        <div class="row">
-          <div class="col error text-white">Error</div>
-          <div class="col onError">On Error</div>
-          <div class="col errorContainer">Error Container</div>
-          <div class="col onErrorContainer text-white">On Error Container</div>
+      </div>
+      <div class="tonal-palettes">
+        <h2>Brand</h2>
+        <div class="row brand">
+          <div class="col tone0 text-white">0</div>
+          <div class="col tone10 text-white">10</div>
+          <div class="col tone20 text-white">20</div>
+          <div class="col tone25 text-white">25</div>
+          <div class="col tone30 text-white">30</div>
+          <div class="col tone35 text-white">35</div>
+          <div class="col tone40 text-white">40</div>
+          <div class="col tone50 text-white">50</div>
+          <div class="col tone60">60</div>
+          <div class="col tone70">70</div>
+          <div class="col tone80">80</div>
+          <div class="col tone90">90</div>
+          <div class="col tone95">95</div>
+          <div class="col tone98">98</div>
+          <div class="col tone99">99</div>
+          <div class="col tone100">100</div>
         </div>
-        <div class="row">
-          <div class="col background">Background</div>
-          <div class="col onBackground text-white">On Background</div>
-          <div class="col surface">Surface</div>
-          <div class="col onSurface text-white">On Surface</div>
+        <div class="row accent">
+          <h2>Accent</h2>
+          <div class="col tone0 text-white">0</div>
+          <div class="col tone10 text-white">10</div>
+          <div class="col tone20 text-white">20</div>
+          <div class="col tone25 text-white">25</div>
+          <div class="col tone30 text-white">30</div>
+          <div class="col tone35 text-white">35</div>
+          <div class="col tone40 text-white">40</div>
+          <div class="col tone50 text-white">50</div>
+          <div class="col tone60">60</div>
+          <div class="col tone70">70</div>
+          <div class="col tone80">80</div>
+          <div class="col tone90">90</div>
+          <div class="col tone95">95</div>
+          <div class="col tone98">98</div>
+          <div class="col tone99">99</div>
+          <div class="col tone100">100</div>
         </div>
-        <div class="row">
-          <div class="col-6 outline text-white">Outline</div>
-          <div class="col surfaceVariant">Surface-Variant</div>
-          <div class="col onSurfaceVariant text-white">On Surface-Variant</div>
+        <div class="row negative">
+          <h2>Negative</h2>
+          <div class="col tone0 text-white">0</div>
+          <div class="col tone10 text-white">10</div>
+          <div class="col tone20 text-white">20</div>
+          <div class="col tone25 text-white">25</div>
+          <div class="col tone30 text-white">30</div>
+          <div class="col tone35 text-white">35</div>
+          <div class="col tone40 text-white">40</div>
+          <div class="col tone50 text-white">50</div>
+          <div class="col tone60">60</div>
+          <div class="col tone70">70</div>
+          <div class="col tone80">80</div>
+          <div class="col tone90">90</div>
+          <div class="col tone95">95</div>
+          <div class="col tone98">98</div>
+          <div class="col tone99">99</div>
+          <div class="col tone100">100</div>
         </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="dist/js/material-color-utilities-webpack.js"></script>
     <script>
-      update(document.getElementById("brand"));
+      update(document.getElementById("negative"));
       function update(e) {
         var result = themeFromSourceColor(e.value);
         Object.entries(result.light).forEach(([key, value]) => {
@@ -135,6 +175,15 @@
         });
         Object.entries(result.dark).forEach(([key, value]) => {
           $(".dark ." + key).css("background-color", value);
+        });
+        Object.entries(result.tonalPalettes.brand).forEach(([key, value]) => {
+          $(".brand ." + key).css("background-color", value);
+        });
+        Object.entries(result.tonalPalettes.accent).forEach(([key, value]) => {
+          $(".accent ." + key).css("background-color", value);
+        });
+        Object.entries(result.tonalPalettes.negative).forEach(([key, value]) => {
+          $(".negative ." + key).css("background-color", value);
         });
       }
     </script>
