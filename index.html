@@ -44,31 +44,33 @@
           <div class="col brand text-white">Brand</div>
           <div class="col brand-strong text-white">Brand Strong</div>
           <div class="col on-brand">On Brand</div>
-          <div class="col brand-container">Brand Container</div>
-          <div class="col brand-container-strong">Brand Container Strong</div>
-          <div class="col on-brand-container text-white">
-            On Brand Container
-          </div>
+          <div class="col brand-flat">Brand Flat</div>
+          <div class="col brand-flat-strong">Brand Flat Strong</div>
+          <div class="col on-brand-flat text-white">On Brand Flat</div>
         </div>
         <div class="row">
           <div class="col accent text-white">Accent</div>
           <div class="col accent-strong text-white">Accent Strong</div>
           <div class="col on-accent">On Accent</div>
-          <div class="col accent-container">Accent Container</div>
-          <div class="col accent-container-strong">Accent Container Strong</div>
-          <div class="col on-accent-container text-white">
-            On Accent Container
-          </div>
+          <div class="col accent-flat">Accent Flat</div>
+          <div class="col accent-flat-strong">Accent Flat Strong</div>
+          <div class="col on-accent-flat text-white">On Accent Flat</div>
+        </div>
+        <div class="row">
+          <div class="col positive text-white">Positive</div>
+          <div class="col positive-strong text-white">Positive Strong</div>
+          <div class="col on-positive">On Positive</div>
+          <div class="col positive-flat">Positive Flat</div>
+          <div class="col positive-flat-strong">Positive Flat Strong</div>
+          <div class="col on-positive-flat text-white">On Positive Flat</div>
         </div>
         <div class="row">
           <div class="col negative text-white">Negative</div>
           <div class="col negative-strong text-white">Negative Strong</div>
           <div class="col on-negative">On Negative</div>
-          <div class="col negative-container">Negative Container</div>
-          <div class="col negative-container-strong">Negative Container Strong</div>
-          <div class="col on-negative-container text-white">
-            On Negative Container
-          </div>
+          <div class="col negative-flat">Negative Flat</div>
+          <div class="col negative-flat-strong">Negative Flat Strong</div>
+          <div class="col on-negative-flat text-white">On Negative Flat</div>
         </div>
       </div>
       <div class="dark">
@@ -77,31 +79,39 @@
           <div class="col brand">Brand</div>
           <div class="col brand-strong">Brand Strong</div>
           <div class="col on-brand text-white">On Brand</div>
-          <div class="col brand-container text-white">Brand Container</div>
-          <div class="col brand-container-strong text-white">Brand Container Strong</div>
-          <div class="col on-brand-container">
-            On Brand Container
-          </div>
+          <div class="col brand-flat text-white">Brand Flat</div>
+          <div class="col brand-flat-strong text-white">Brand Flat Strong</div>
+          <div class="col on-brand-flat">On Brand Flat</div>
         </div>
         <div class="row">
           <div class="col accent">Accent</div>
           <div class="col accent-strong">Accent Strong</div>
           <div class="col on-accent text-white">On Accent</div>
-          <div class="col accent-container text-white">Accent Container</div>
-          <div class="col accent-container-strong text-white">Accent Container Strong</div>
-          <div class="col on-accent-container">
-            On Accent Container
+          <div class="col accent-flat text-white">Accent Flat</div>
+          <div class="col accent-flat-strong text-white">
+            Accent Flat Strong
           </div>
+          <div class="col on-accent-flat">On Accent Flat</div>
+        </div>
+        <div class="row">
+          <div class="col positive">Positive</div>
+          <div class="col positive-strong">Positive Strong</div>
+          <div class="col on-positive text-white">On Positive</div>
+          <div class="col positive-flat text-white">Positive Flat</div>
+          <div class="col positive-flat-strong text-white">
+            Positive Flat Strong
+          </div>
+          <div class="col on-negative-flat">On Negative Flat</div>
         </div>
         <div class="row">
           <div class="col negative">Negative</div>
           <div class="col negative-strong">Negative Strong</div>
           <div class="col on-negative text-white">On Negative</div>
-          <div class="col negative-container text-white">Negative Container</div>
-          <div class="col negative-container-strong text-white">Negative Container Strong</div>
-          <div class="col on-negative-container">
-            On Negative Container
+          <div class="col negative-flat text-white">Negative Flat</div>
+          <div class="col negative-flat-strong text-white">
+            Negative Flat Strong
           </div>
+          <div class="col on-negative-flat">On Negative Flat</div>
         </div>
       </div>
       <div class="tonal-palettes">
@@ -126,6 +136,25 @@
         </div>
         <div class="row accent">
           <h2>Accent</h2>
+          <div class="col tone0 text-white">0</div>
+          <div class="col tone10 text-white">10</div>
+          <div class="col tone20 text-white">20</div>
+          <div class="col tone25 text-white">25</div>
+          <div class="col tone30 text-white">30</div>
+          <div class="col tone35 text-white">35</div>
+          <div class="col tone40 text-white">40</div>
+          <div class="col tone50 text-white">50</div>
+          <div class="col tone60">60</div>
+          <div class="col tone70">70</div>
+          <div class="col tone80">80</div>
+          <div class="col tone90">90</div>
+          <div class="col tone95">95</div>
+          <div class="col tone98">98</div>
+          <div class="col tone99">99</div>
+          <div class="col tone100">100</div>
+        </div>
+        <div class="row positive">
+          <h2>Positive</h2>
           <div class="col tone0 text-white">0</div>
           <div class="col tone10 text-white">10</div>
           <div class="col tone20 text-white">20</div>
@@ -176,14 +205,10 @@
         Object.entries(result.dark).forEach(([key, value]) => {
           $(".dark ." + key).css("background-color", value);
         });
-        Object.entries(result.tonalPalettes.brand).forEach(([key, value]) => {
-          $(".brand ." + key).css("background-color", value);
-        });
-        Object.entries(result.tonalPalettes.accent).forEach(([key, value]) => {
-          $(".accent ." + key).css("background-color", value);
-        });
-        Object.entries(result.tonalPalettes.negative).forEach(([key, value]) => {
-          $(".negative ." + key).css("background-color", value);
+        Object.entries(result.tonalPalettes).forEach(([color_name, tunes]) => {
+          Object.entries(tunes).forEach(([tune, color_hex]) => {
+            $(`.${color_name} .${tune}`).css("background-color", color_hex);
+          });
         });
       }
     </script>
