@@ -1,23 +1,29 @@
 import {
   argbFromHex,
-  themeFromSourceColor,
   hexFromArgb,
   CorePalette,
+  Blend,
 } from "@material/material-color-utilities";
 
-window.themeFromSourceColor = function (a, b) {
+window.themeFromSourceColor = function (brand, accent) {
   const result = {
     tonalPalettes: {},
     light: {},
     dark: {},
   };
-  const core = CorePalette.of(argbFromHex(a));
-  const positive = CorePalette.of(argbFromHex("#286B2A"));
+
+  const brand_core = CorePalette.of(argbFromHex(brand));
+  const accent_core = CorePalette.of(
+    Blend.harmonize(argbFromHex(accent), argbFromHex(brand))
+  );
+  const positive_core = CorePalette.of(
+    Blend.harmonize(argbFromHex("#286B2A"), argbFromHex(brand))
+  );
   const colors = {
-    brand: core.a1,
-    accent: core.a2,
-    negative: core.error,
-    positive: positive.a1,
+    brand: brand_core.a1,
+    accent: accent_core.a1,
+    positive: positive_core.a1,
+    negative: brand_core.error,
   };
   const tones = [
     0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100,
@@ -42,13 +48,5 @@ window.themeFromSourceColor = function (a, b) {
     result.dark[`${key}-flat-strong`] = result.tonalPalettes[key].tone20;
     result.dark[`on-${key}-flat`] = result.tonalPalettes[key].tone90;
   });
-  console.log(result);
-  /*
-  Object.entries(theme.schemes.light.props).forEach(([key, value]) => {
-    result.light[key] = hexFromArgb(value);
-  });
-  Object.entries(theme.schemes.dark.props).forEach(([key, value]) => {
-    result.dark[key] = hexFromArgb(value);
-  });*/
   return result;
 };

@@ -27,15 +27,25 @@
   <body>
     <div class="container mt-5">
       <div class="row">
-        <div class="col-4">
+        <div class="col-3">
           <input
             type="color"
             class="form-control form-control-color"
-            id="negative"
+            id="brand"
             value="#2c5ab4"
             onchange="update(this)"
           />
           <h2>Brand</h2>
+        </div>
+        <div class="col-3">
+          <input
+            type="color"
+            class="form-control form-control-color"
+            id="accent"
+            value="#705D00"
+            onchange="update(this)"
+          />
+          <h2>Accent</h2>
         </div>
       </div>
       <div class="light">
@@ -196,9 +206,11 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="dist/js/material-color-utilities-webpack.js"></script>
     <script>
-      update(document.getElementById("negative"));
-      function update(e) {
-        var result = themeFromSourceColor(e.value);
+      update();
+      function update() {
+        const brand = document.getElementById("brand").value;
+        const accent = document.getElementById("accent").value;
+        const result = themeFromSourceColor(brand, accent);
         Object.entries(result.light).forEach(([key, value]) => {
           $(".light ." + key).css("background-color", value);
         });
