@@ -5,7 +5,7 @@ import {
   Blend,
 } from "@material/material-color-utilities";
 
-window.themeFromSourceColor = function (brand, accent) {
+window.themeFromSourceColor = function (brand, accent, information, warning) {
   const result = {
     tonalPalettes: {},
     light: {},
@@ -19,11 +19,19 @@ window.themeFromSourceColor = function (brand, accent) {
   const positive_core = CorePalette.of(
     Blend.harmonize(argbFromHex("#286B2A"), argbFromHex(brand))
   );
+  const information_core = CorePalette.of(
+    Blend.harmonize(argbFromHex(information), argbFromHex(brand))
+  );
+  const warning_core = CorePalette.of(
+    Blend.harmonize(argbFromHex(warning), argbFromHex(brand))
+  );
   const colors = {
     brand: brand_core.a1,
     accent: accent_core.a1,
     positive: positive_core.a1,
     negative: brand_core.error,
+    information: information_core.a1,
+    warning: warning_core.a1,
   };
   const tones = [
     0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100,

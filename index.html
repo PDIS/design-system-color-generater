@@ -10,7 +10,12 @@
     />
     <style>
       .col {
-        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 900;
+        padding: 1rem 0.25rem;
       }
       h2 {
         display: inline-block !important;
@@ -18,9 +23,6 @@
       input {
         width: 3rem !important;
         display: inline-block !important;
-      }
-      .col {
-        font-size: 10px;
       }
     </style>
   </head>
@@ -47,81 +49,127 @@
           />
           <h2>Accent</h2>
         </div>
+        <div class="col-3">
+          <input
+            type="color"
+            class="form-control form-control-color"
+            id="information"
+            value="#006687"
+            onchange="update(this)"
+          />
+          <h2>Information</h2>
+        </div>
+        <div class="col-3">
+          <input
+            type="color"
+            class="form-control form-control-color"
+            id="warning"
+            value="#A53D00"
+            onchange="update(this)"
+          />
+          <h2>Warning</h2>
+        </div>
       </div>
       <div class="light">
         <h2>Light Theme</h2>
-        <div class="row">
-          <div class="col brand text-white">Brand</div>
-          <div class="col brand-strong text-white">Brand Strong</div>
-          <div class="col on-brand">On Brand</div>
-          <div class="col brand-flat">Brand Flat</div>
-          <div class="col brand-flat-strong">Brand Flat Strong</div>
-          <div class="col on-brand-flat text-white">On Brand Flat</div>
+        <div class="row brand">
+          <div class="col tone40 text-tone100">Brand</div>
+          <div class="col tone30 text-tone100">Brand Strong</div>
+          <div class="col tone100 text-tone40">On Brand</div>
+          <div class="col tone90 text-tone10">Brand Flat</div>
+          <div class="col tone80 text-tone10">Brand Flat Strong</div>
+          <div class="col tone10 text-tone90">On Brand Flat</div>
         </div>
-        <div class="row">
-          <div class="col accent text-white">Accent</div>
-          <div class="col accent-strong text-white">Accent Strong</div>
-          <div class="col on-accent">On Accent</div>
-          <div class="col accent-flat">Accent Flat</div>
-          <div class="col accent-flat-strong">Accent Flat Strong</div>
-          <div class="col on-accent-flat text-white">On Accent Flat</div>
+        <div class="row accent">
+          <div class="col tone40 text-tone100">Accent</div>
+          <div class="col tone30 text-tone100">Accent Strong</div>
+          <div class="col tone100 text-tone40">On Accent</div>
+          <div class="col tone90 text-tone10">Accent Flat</div>
+          <div class="col tone80 text-tone10">Accent Flat Strong</div>
+          <div class="col tone10 text-tone90">On Accent Flat</div>
         </div>
-        <div class="row">
-          <div class="col positive text-white">Positive</div>
-          <div class="col positive-strong text-white">Positive Strong</div>
-          <div class="col on-positive">On Positive</div>
-          <div class="col positive-flat">Positive Flat</div>
-          <div class="col positive-flat-strong">Positive Flat Strong</div>
-          <div class="col on-positive-flat text-white">On Positive Flat</div>
+        <div class="row positive">
+          <div class="col tone40 text-tone100">Positive</div>
+          <div class="col tone30 text-tone100">Positive Strong</div>
+          <div class="col tone100 text-tone40">On Positive</div>
+          <div class="col tone90 text-tone10">Positive Flat</div>
+          <div class="col tone80 text-tone10">Positive Flat Strong</div>
+          <div class="col tone10 text-tone90">On Positive Flat</div>
         </div>
-        <div class="row">
-          <div class="col negative text-white">Negative</div>
-          <div class="col negative-strong text-white">Negative Strong</div>
-          <div class="col on-negative">On Negative</div>
-          <div class="col negative-flat">Negative Flat</div>
-          <div class="col negative-flat-strong">Negative Flat Strong</div>
-          <div class="col on-negative-flat text-white">On Negative Flat</div>
+        <div class="row negative">
+          <div class="col tone40 text-tone100">Negative</div>
+          <div class="col tone30 text-tone100">Negative Strong</div>
+          <div class="col tone100 text-tone40">On Negative</div>
+          <div class="col tone90 text-tone10">Negative Flat</div>
+          <div class="col tone80 text-tone10">Negative Flat Strong</div>
+          <div class="col tone10 text-tone90">On Negative Flat</div>
+        </div>
+        <div class="row information">
+          <div class="col tone40 text-tone100">Information</div>
+          <div class="col tone30 text-tone100">Information Strong</div>
+          <div class="col tone100 text-tone40">On Information</div>
+          <div class="col tone90 text-tone10">Information Flat</div>
+          <div class="col tone80 text-tone10">Information Flat Strong</div>
+          <div class="col tone10 text-tone90">On Information Flat</div>
+        </div>
+        <div class="row warning">
+          <div class="col tone40 text-tone100">Warning</div>
+          <div class="col tone30 text-tone100">Warning Strong</div>
+          <div class="col tone100 text-tone40">On Warning</div>
+          <div class="col tone90 text-tone10">Warning Flat</div>
+          <div class="col tone80 text-tone10">Warning Flat Strong</div>
+          <div class="col tone10 text-tone90">On Warning Flat</div>
         </div>
       </div>
       <div class="dark">
         <h2>Dark Theme</h2>
-        <div class="row">
-          <div class="col brand">Brand</div>
-          <div class="col brand-strong">Brand Strong</div>
-          <div class="col on-brand text-white">On Brand</div>
-          <div class="col brand-flat text-white">Brand Flat</div>
-          <div class="col brand-flat-strong text-white">Brand Flat Strong</div>
-          <div class="col on-brand-flat">On Brand Flat</div>
+        <div class="row brand">
+          <div class="col tone80 text-tone20">Brand</div>
+          <div class="col tone70 text-tone20">Brand Strong</div>
+          <div class="col tone20 text-tone80">On Brand</div>
+          <div class="col tone30 text-tone90">Brand Flat</div>
+          <div class="col tone20 text-tone90">Brand Flat Strong</div>
+          <div class="col tone90 text-tone30">On Brand Flat</div>
         </div>
-        <div class="row">
-          <div class="col accent">Accent</div>
-          <div class="col accent-strong">Accent Strong</div>
-          <div class="col on-accent text-white">On Accent</div>
-          <div class="col accent-flat text-white">Accent Flat</div>
-          <div class="col accent-flat-strong text-white">
-            Accent Flat Strong
-          </div>
-          <div class="col on-accent-flat">On Accent Flat</div>
+        <div class="row accent">
+          <div class="col tone80 text-tone20">Accent</div>
+          <div class="col tone70 text-tone20">Accent Strong</div>
+          <div class="col tone20 text-tone80">On Accent</div>
+          <div class="col tone30 text-tone90">Accent Flat</div>
+          <div class="col tone20 text-tone90">Accent Flat Strong</div>
+          <div class="col tone90 text-tone30">On Accent Flat</div>
         </div>
-        <div class="row">
-          <div class="col positive">Positive</div>
-          <div class="col positive-strong">Positive Strong</div>
-          <div class="col on-positive text-white">On Positive</div>
-          <div class="col positive-flat text-white">Positive Flat</div>
-          <div class="col positive-flat-strong text-white">
-            Positive Flat Strong
-          </div>
-          <div class="col on-positive-flat">On Negative Flat</div>
+        <div class="row positive">
+          <div class="col tone80 text-tone20">Positive</div>
+          <div class="col tone70 text-tone20">Positive Strong</div>
+          <div class="col tone20 text-tone80">On Positive</div>
+          <div class="col tone30 text-tone90">Positive Flat</div>
+          <div class="col tone20 text-tone90">Positive Flat Strong</div>
+          <div class="col tone90 text-tone30">On Positive Flat</div>
         </div>
-        <div class="row">
-          <div class="col negative">Negative</div>
-          <div class="col negative-strong">Negative Strong</div>
-          <div class="col on-negative text-white">On Negative</div>
-          <div class="col negative-flat text-white">Negative Flat</div>
-          <div class="col negative-flat-strong text-white">
-            Negative Flat Strong
-          </div>
-          <div class="col on-negative-flat">On Negative Flat</div>
+        <div class="row negative">
+          <div class="col tone80 text-tone20">Negative</div>
+          <div class="col tone70 text-tone20">Negative Strong</div>
+          <div class="col tone20 text-tone80">On Negative</div>
+          <div class="col tone30 text-tone90">Negative Flat</div>
+          <div class="col tone20 text-tone90">Negative Flat Strong</div>
+          <div class="col tone90 text-tone30">On Negative Flat</div>
+        </div>
+        <div class="row information">
+          <div class="col tone80 text-tone20">Information</div>
+          <div class="col tone70 text-tone20">Information Strong</div>
+          <div class="col tone20 text-tone80">On Information</div>
+          <div class="col tone30 text-tone90">Information Flat</div>
+          <div class="col tone20 text-tone90">Information Flat Strong</div>
+          <div class="col tone90 text-tone30">On Information Flat</div>
+        </div>
+        <div class="row warning">
+          <div class="col tone80 text-tone20">Warning</div>
+          <div class="col tone70 text-tone20">Warning Strong</div>
+          <div class="col tone20 text-tone80">On Warning</div>
+          <div class="col tone30 text-tone90">Warning Flat</div>
+          <div class="col tone20 text-tone90">Warning Flat Strong</div>
+          <div class="col tone90 text-tone30">On Warning Flat</div>
         </div>
       </div>
       <div class="tonal-palettes">
@@ -201,25 +249,73 @@
           <div class="col tone99">99</div>
           <div class="col tone100">100</div>
         </div>
+        <div class="row information">
+          <h2>Information</h2>
+          <div class="col tone0 text-white">0</div>
+          <div class="col tone10 text-white">10</div>
+          <div class="col tone20 text-white">20</div>
+          <div class="col tone25 text-white">25</div>
+          <div class="col tone30 text-white">30</div>
+          <div class="col tone35 text-white">35</div>
+          <div class="col tone40 text-white">40</div>
+          <div class="col tone50 text-white">50</div>
+          <div class="col tone60">60</div>
+          <div class="col tone70">70</div>
+          <div class="col tone80">80</div>
+          <div class="col tone90">90</div>
+          <div class="col tone95">95</div>
+          <div class="col tone98">98</div>
+          <div class="col tone99">99</div>
+          <div class="col tone100">100</div>
+        </div>
+        <div class="row warning">
+          <h2>Warning</h2>
+          <div class="col tone0 text-white">0</div>
+          <div class="col tone10 text-white">10</div>
+          <div class="col tone20 text-white">20</div>
+          <div class="col tone25 text-white">25</div>
+          <div class="col tone30 text-white">30</div>
+          <div class="col tone35 text-white">35</div>
+          <div class="col tone40 text-white">40</div>
+          <div class="col tone50 text-white">50</div>
+          <div class="col tone60">60</div>
+          <div class="col tone70">70</div>
+          <div class="col tone80">80</div>
+          <div class="col tone90">90</div>
+          <div class="col tone95">95</div>
+          <div class="col tone98">98</div>
+          <div class="col tone99">99</div>
+          <div class="col tone100">100</div>
+        </div>
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="dist/js/material-color-utilities-webpack.js"></script>
     <script>
       update();
-      function update() {
+      function update(e) {
         const brand = document.getElementById("brand").value;
         const accent = document.getElementById("accent").value;
-        const result = themeFromSourceColor(brand, accent);
+        const information = document.getElementById("information").value;
+        const warning = document.getElementById("warning").value;
+        const result = themeFromSourceColor(
+          brand,
+          accent,
+          information,
+          warning
+        );
         Object.entries(result.light).forEach(([key, value]) => {
-          $(".light ." + key).css("background-color", value);
+          $(`.light .${key}`).css("background-color", value);
         });
         Object.entries(result.dark).forEach(([key, value]) => {
-          $(".dark ." + key).css("background-color", value);
+          $(`.dark .${key}`).css("background-color", value);
         });
         Object.entries(result.tonalPalettes).forEach(([color_name, tunes]) => {
           Object.entries(tunes).forEach(([tune, color_hex]) => {
             $(`.${color_name} .${tune}`).css("background-color", color_hex);
+          });
+          Object.entries(tunes).forEach(([tune, color_hex]) => {
+            $(`.${color_name} .text-${tune}`).css("color", color_hex);
           });
         });
       }
