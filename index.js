@@ -3,6 +3,7 @@ import {
   hexFromArgb,
   CorePalette,
   Blend,
+  themeFromSourceColor
 } from "@material/material-color-utilities";
 
 window.themeFromSourceColor = function (brand, accent, information, warning) {
@@ -32,6 +33,8 @@ window.themeFromSourceColor = function (brand, accent, information, warning) {
     negative: brand_core.error,
     information: information_core.a1,
     warning: warning_core.a1,
+    netural: brand_core.n1,
+    neutralvariant: brand_core.n2,
   };
   const tones = [
     0, 10, 20, 25, 30, 35, 40, 50, 60, 70, 80, 90, 95, 98, 99, 100,
@@ -41,20 +44,6 @@ window.themeFromSourceColor = function (brand, accent, information, warning) {
     tones.forEach((t) => {
       result.tonalPalettes[key]["tone" + t] = hexFromArgb(value.tone(t));
     });
-
-    result.light[key] = result.tonalPalettes[key].tone40;
-    result.light[`${key}-strong`] = result.tonalPalettes[key].tone30;
-    result.light[`on-${key}`] = result.tonalPalettes[key].tone100;
-    result.light[`${key}-flat`] = result.tonalPalettes[key].tone90;
-    result.light[`${key}-flat-strong`] = result.tonalPalettes[key].tone80;
-    result.light[`on-${key}-flat`] = result.tonalPalettes[key].tone10;
-
-    result.dark[key] = result.tonalPalettes[key].tone80;
-    result.dark[`${key}-strong`] = result.tonalPalettes[key].tone70;
-    result.dark[`on-${key}`] = result.tonalPalettes[key].tone20;
-    result.dark[`${key}-flat`] = result.tonalPalettes[key].tone30;
-    result.dark[`${key}-flat-strong`] = result.tonalPalettes[key].tone20;
-    result.dark[`on-${key}-flat`] = result.tonalPalettes[key].tone90;
   });
   return result;
 };
