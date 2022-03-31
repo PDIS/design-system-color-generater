@@ -146,11 +146,11 @@
           </tr>
           <tr class="netural">
             <td class="tone99 text-tone10">Surface</td>
-            <td class="tone98 text-tone10">Surface at +1</td>
-            <td class="tone95 text-tone10">Surface at +2</td>
-            <td class="tone90 text-tone10">Surface at +3</td>
-            <td class="tone80 text-tone10">Surface at +4</td>
-            <td class="tone70 text-tone10">Surface at +5</td>
+            <td class="surface1 text-tone10">Surface at +1</td>
+            <td class="surface2 text-tone10">Surface at +2</td>
+            <td class="surface3 text-tone10">Surface at +3</td>
+            <td class="surface4 text-tone10">Surface at +4</td>
+            <td class="surface5 text-tone10">Surface at +5</td>
             <td class="tone10 text-tone99">On Surface</td>
           </tr>
           <tr class="neutralvariant">
@@ -201,11 +201,11 @@
   --warning-flat-strong: <span class="warning tone80"></span>;
   --on-warning-flat: <span class="warning tone10"></span>;
   --surface: <span class="netural tone99"></span>;
-  --surface-1: <span class="netural tone98"></span>;
-  --surface-2: <span class="netural tone95"></span>;
-  --surface-3: <span class="netural tone90"></span>;
-  --surface-4: <span class="netural tone80"></span>;
-  --surface-5: <span class="netural tone70"></span>;
+  --surface-1: <span class="netural surface1"></span>;
+  --surface-2: <span class="netural surface2"></span>;
+  --surface-3: <span class="netural surface3"></span>;
+  --surface-4: <span class="netural surface4"></span>;
+  --surface-5: <span class="netural surface5"></span>;
   --on-surface: <span class="netural tone10"></span>;
   --surface-variant: <span class="neutralvariant tone90"></span>;
   --on-surface-variant: <span class="neutralvariant tone30"></span>;
@@ -394,6 +394,47 @@
             $(`.${color_name} .text-${tune}`).css("color", color_hex);
           });
         });
+        const surface = result.tonalPalettes.netural.tone99;
+        const mask = result.tonalPalettes.brand.tone40;
+        $("td.surface1").css("background-color", colorMix(surface, mask, 0.05));
+        $("td.surface2").css("background-color", colorMix(surface, mask, 0.08));
+        $("td.surface3").css("background-color", colorMix(surface, mask, 0.11));
+        $("td.surface4").css("background-color", colorMix(surface, mask, 0.12));
+        $("td.surface5").css("background-color", colorMix(surface, mask, 0.14));
+        $(".netural.surface1").text(colorMix(surface, mask, 0.05));
+        $(".netural.surface2").text(colorMix(surface, mask, 0.08));
+        $(".netural.surface3").text(colorMix(surface, mask, 0.11));
+        $(".netural.surface4").text(colorMix(surface, mask, 0.12));
+        $(".netural.surface5").text(colorMix(surface, mask, 0.14));
+      }
+
+      function colorMix(bg, mask, optical) {
+        const alpha = 1 - optical;
+        bg = hexToRGB(bg);
+        mask = hexToRGB(mask);
+        const red = Math.round(
+          (optical * (mask.red / 255) + alpha * (bg.red / 255)) * 255
+        );
+        const green = Math.round(
+          (optical * (mask.green / 255) + alpha * (bg.green / 255)) * 255
+        );
+        const blue = Math.round(
+          (optical * (mask.blue / 255) + alpha * (bg.blue / 255)) * 255
+        );
+        return rgbToHex(red, green, blue);
+      }
+
+      function hexToRGB(hex) {
+        return {
+          red: parseInt(hex[1] + hex[2], 16),
+          green: parseInt(hex[3] + hex[4], 16),
+          blue: parseInt(hex[5] + hex[6], 16),
+        };
+      }
+      function rgbToHex(r, g, b) {
+        return (
+          "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+        );
       }
     </script>
   </body>
