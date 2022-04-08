@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/main.js",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     filename: "js/[name].[hash].js",
   },
   plugins: [
@@ -25,11 +25,3 @@ module.exports = {
     }),
   ],
 };
-/*
-module.exports = {
-  entry: "./index.js",
-  output: {
-    filename: "material-color-utilities-webpack.js",
-    path: path.resolve(__dirname, "dist/js"),
-  },
-};*/
