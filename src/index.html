@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+
+    <style>
+      body {
+        background-color: #eff4f5;
+      }
+      .col {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-weight: 900;
+        padding: 1rem 0.25rem;
+      }
+      table {
+        table-layout: fixed;
+      }
+      tr {
+        padding-bottom: 1rem;
+      }
+
+      h1 {
+        border-bottom: 2px solid gray;
+        font-weight: bold;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+      }
+      h2,
+      h3 {
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+      }
+      input {
+        width: 3rem !important;
+        display: inline-block !important;
+      }
+      i {
+        margin-right: 2px;
+      }
+      .theme {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+        font-size: 14px;
+      }
+      .theme > * {
+        width: 14%;
+        padding: 0.5rem;
+        min-height: 80px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+      }
+      .theme > *:first-child {
+        margin-right: 2%;
+      }
+      .theme > * > span:nth-child(2) {
+        align-self: end;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container my-5">
+      <h1>PDIS Design System Color Generator</h1>
+      <div class="row">
+        <div class="col-3">
+          <input
+            type="color"
+            class="form-control form-control-color"
+            id="brand"
+            value="#2c5ab4"
+            onchange="update(this)"
+          />
+          <p class="fs-3 d-inline">Brand</p>
+        </div>
+        <div class="col-3">
+          <input
+            type="color"
+            class="form-control form-control-color"
+            id="accent"
+            value="#705D00"
+            onchange="update(this)"
+          />
+          <p class="fs-3 d-inline">Accent</p>
+        </div>
+        <div class="col-3">
+          <input
+            type="color"
+            class="form-control form-control-color"
+            id="information"
+            value="#006687"
+            onchange="update(this)"
+          />
+          <p class="fs-3 d-inline">Information</p>
+        </div>
+        <div class="col-3">
+          <input
+            type="color"
+            class="form-control form-control-color"
+            id="warning"
+            value="#A53D00"
+            onchange="update(this)"
+          />
+          <p class="fs-3 d-inline">Warning</p>
+        </div>
+      </div>
+      <div class="light">
+        <h2>Color Schemes</h2>
+        <h3>Light Theme</h3>
+        <section>
+          <% _.forEach(htmlWebpackPlugin.options.types, (type) => { %>
+          <div class="theme">
+            <div class="<%= type %> tone40 text-tone100">
+              <span><%= type %></span><span><%= type %>40</span>
+            </div>
+            <div class="<%= type %> tone30 text-tone100">
+              <span><%= type %> Strong</span><span><%= type %>30</span>
+            </div>
+            <div class="<%= type %> tone100 text-tone40">
+              <span>On <%= type %></span><span><%= type %>100</span>
+            </div>
+            <div class="<%= type %> tone90 text-tone10">
+              <span><%= type %> Flat</span><span><%= type %>90</span>
+            </div>
+            <div class="<%= type %> tone80 text-tone10">
+              <span><%= type %> Flat Strong</span><span><%= type %>80</span>
+            </div>
+            <div class="<%= type %> tone10 text-tone90">
+              <span>On <%= type %> Flat</span><span><%= type %>10</span>
+            </div>
+          </div>
+          <% }) %>
+          <div class="theme">
+            <div class="netural tone99 text-tone10">
+              <span>Background</span><span>Netural99</span>
+            </div>
+            <div class="netural tone10 text-tone99">
+              <span>On Background</span><span>Netural10</span>
+            </div>
+          </div>
+          <div class="theme">
+            <div class="netural tone99 text-tone10">
+              <span>Surface</span><span>Netural99</span>
+            </div>
+            <div class="netural tone99 surface5 text-tone10">
+              <span>Surface at +1</span><span>+ 5% Brand</span>
+            </div>
+            <div class="netural tone99 surface8 text-tone10">
+              <span>Surface at +2</span><span>+ 8% Brand</span>
+            </div>
+            <div class="netural tone99 surface11 text-tone10">
+              <span>Surface at +3</span><span>+ 11% Brand</span>
+            </div>
+            <div class="netural tone99 surface12 text-tone10">
+              <span>Surface at +4</span><span>+ 12% Brand</span>
+            </div>
+            <div class="netural tone99 surface14 text-tone10">
+              <span>Surface at +5</span><span>+ 14% Brand</span>
+            </div>
+            <div class="netural tone10 text-tone99">
+              <span>On Surface</span><span>Neutral10</span>
+            </div>
+          </div>
+          <div class="theme">
+            <div class="neutralvariant tone90 text-tone30">
+              <span>Surface Variant</span><span>Neutral-Variant90</span>
+            </div>
+            <div class="neutralvariant tone30 text-tone90">
+              <span>On Surface Variant</span><span>Neutral-Variant30</span>
+            </div>
+            <div class="neutralvariant tone50 text-tone90" style="width: 28%">
+              <span>Outline</span><span>Neutral-Variant50</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="bg-dark">
+      <div class="container py-5">
+        <h3 class="text-light">Dark Theme</h3>
+        <section>
+          <% _.forEach(htmlWebpackPlugin.options.types, (type) => { %>
+          <div class="theme">
+            <div class="<%= type %> tone80 text-tone20">
+              <span><%= type %></span><span><%= type %>80</span>
+            </div>
+            <div class="<%= type %> tone90 text-tone20">
+              <span><%= type %> Strong</span><span><%= type %>90</span>
+            </div>
+            <div class="<%= type %> tone20 text-tone80">
+              <span>On <%= type %></span><span><%= type %>20</span>
+            </div>
+            <div class="<%= type %> tone30 text-tone90">
+              <span><%= type %> Flat</span><span><%= type %>30</span>
+            </div>
+            <div class="<%= type %> tone20 text-tone90">
+              <span><%= type %> Flat Strong</span><span><%= type %>20</span>
+            </div>
+            <div class="<%= type %> tone90 text-tone30">
+              <span>On <%= type %> Flat</span><span><%= type %>90</span>
+            </div>
+          </div>
+          <% }) %>
+          <div class="theme">
+            <div class="netural tone10 text-tone90">
+              <span>Background</span><span>Netural10</span>
+            </div>
+            <div class="netural tone90 text-tone10">
+              <span>On Background</span><span>Netural90</span>
+            </div>
+          </div>
+          <div class="theme">
+            <div class="netural tone10 text-tone90">
+              <span>Surface</span><span>Netural10</span>
+            </div>
+            <div class="netural tone10 surface5 text-tone90">
+              <span>Surface at +1</span><span>+ 5% Brand</span>
+            </div>
+            <div class="netural tone10 surface8 text-tone90">
+              <span>Surface at +2</span><span>+ 8% Brand</span>
+            </div>
+            <div class="netural tone10 surface11 text-tone90">
+              <span>Surface at +3</span><span>+ 11% Brand</span>
+            </div>
+            <div class="netural tone10 surface12 text-tone90">
+              <span>Surface at +4</span><span>+ 12% Brand</span>
+            </div>
+            <div class="netural tone10 surface14 text-tone90">
+              <span>Surface at +5</span><span>+ 14% Brand</span>
+            </div>
+            <div class="netural tone90 text-tone10">
+              <span>On Surface</span><span>Neutral90</span>
+            </div>
+          </div>
+          <div class="theme">
+            <div class="neutralvariant tone30 text-tone80">
+              <span>Surface Variant</span><span>Neutral-Variant30</span>
+            </div>
+            <div class="neutralvariant tone80 text-tone40">
+              <span>On Surface Variant</span><span>Neutral-Variant80</span>
+            </div>
+            <div class="neutralvariant tone60 text-tone40" style="width: 28%">
+              <span>Outline</span><span>Neutral-Variant60</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <div class="container">
+      <div>
+        <div>
+          <h3>CSS</h3>
+          <pre>
+:root {
+  --brand: <span class="brand tone40"></span>;
+  --brand-strong: <span class="brand tone30"></span>;
+  --on-brand: <span class="brand tone100"></span>;
+  --brand-flat: <span class="brand tone90"></span>;
+  --brand-flat-strong: <span class="brand tone80"></span>;
+  --on-brand-flat: <span class="brand tone10"></span>;
+  --accent: <span class="accent tone40"></span>;
+  --accent-strong: <span class="accent tone30"></span>;
+  --on-accent: <span class="accent tone100"></span>;
+  --accent-flat: <span class="accent tone90"></span>;
+  --accent-flat-strong: <span class="accent tone80"></span>;
+  --on-accent-flat: <span class="accent tone10"></span>;
+  --positive: <span class="positive tone40"></span>;
+  --positive-strong: <span class="positive tone30"></span>;
+  --on-positive: <span class="positive tone100"></span>;
+  --positive-flat: <span class="positive tone90"></span>;
+  --positive-flat-strong: <span class="positive tone80"></span>;
+  --on-positive-flat: <span class="positive tone10"></span>;
+  --negative: <span class="negative tone40"></span>;
+  --negative-strong: <span class="negative tone30"></span>;
+  --on-negative: <span class="negative tone100"></span>;
+  --negative-flat: <span class="negative tone90"></span>;
+  --negative-flat-strong: <span class="negative tone80"></span>;
+  --on-negative-flat: <span class="negative tone10"></span>;
+  --information: <span class="information tone40"></span>;
+  --information-strong: <span class="information tone30"></span>;
+  --on-information: <span class="information tone100"></span>;
+  --information-flat: <span class="information tone90"></span>;
+  --information-flat-strong: <span class="information tone80"></span>;
+  --on-information-flat: <span class="information tone10"></span>;
+  --warning: <span class="warning tone40"></span>;
+  --warning-strong: <span class="warning tone30"></span>;
+  --on-warning: <span class="warning tone100"></span>;
+  --warning-flat: <span class="warning tone90"></span>;
+  --warning-flat-strong: <span class="warning tone80"></span>;
+  --on-warning-flat: <span class="warning tone10"></span>;
+  --surface: <span class="netural tone99"></span>;
+  --surface-1: <span class="netural tone99 surface5"></span>;
+  --surface-2: <span class="netural tone99 surface8"></span>;
+  --surface-3: <span class="netural tone99 surface11"></span>;
+  --surface-4: <span class="netural tone99 surface12"></span>;
+  --surface-5: <span class="netural tone99 surface14"></span>;
+  --on-surface: <span class="netural tone10"></span>;
+  --surface-variant: <span class="neutralvariant tone90"></span>;
+  --on-surface-variant: <span class="neutralvariant tone30"></span>;
+  --outline: <span class="neutralvariant tone50"></span>;
+  --background: <span class="netural tone99"></span>;
+  --on-background: <span class="netural tone10"></span>;
+}
+.darkmode {
+  --brand: <span class="brand tone80"></span>;
+  --brand-strong: <span class="brand tone90"></span>;
+  --on-brand: <span class="brand tone20"></span>;
+  --brand-flat: <span class="brand tone30"></span>;
+  --brand-flat-strong: <span class="brand tone20"></span>;
+  --on-brand-flat: <span class="brand tone90"></span>;
+  --accent: <span class="accent tone80"></span>;
+  --accent-strong: <span class="accent tone90"></span>;
+  --on-accent: <span class="accent tone20"></span>;
+  --accent-flat: <span class="accent tone30"></span>;
+  --accent-flat-strong: <span class="accent tone20"></span>;
+  --on-accent-flat: <span class="accent tone90"></span>;
+  --positive: <span class="positive tone80"></span>;
+  --positive-strong: <span class="positive tone90"></span>;
+  --on-positive: <span class="positive tone20"></span>;
+  --positive-flat: <span class="positive tone30"></span>;
+  --positive-flat-strong: <span class="positive tone20"></span>;
+  --on-positive-flat: <span class="positive tone90"></span>;
+  --negative: <span class="negative tone80"></span>;
+  --negative-strong: <span class="negative tone90"></span>;
+  --on-negative: <span class="negative tone20"></span>;
+  --negative-flat: <span class="negative tone30"></span>;
+  --negative-flat-strong: <span class="negative tone20"></span>;
+  --on-negative-flat: <span class="negative tone90"></span>;
+  --information: <span class="information tone80"></span>;
+  --information-strong: <span class="information tone90"></span>;
+  --on-information: <span class="information tone20"></span>;
+  --information-flat: <span class="information tone30"></span>;
+  --information-flat-strong: <span class="information tone20"></span>;
+  --on-information-flat: <span class="information tone90"></span>;
+  --warning: <span class="warning tone80"></span>;
+  --warning-strong: <span class="warning tone90"></span>;
+  --on-warning: <span class="warning tone20"></span>;
+  --warning-flat: <span class="warning tone30"></span>;
+  --warning-flat-strong: <span class="warning tone20"></span>;
+  --on-warning-flat: <span class="warning tone90"></span>;
+  --surface: <span class="netural tone10"></span>;
+  --surface-1: <span class="netural tone10 surface5"></span>;
+  --surface-2: <span class="netural tone10 surface8"></span>; 
+  --surface-3: <span class="netural tone10 surface11"></span>;
+  --surface-4: <span class="netural tone10 surface12"></span>;
+  --surface-5: <span class="netural tone10 surface14"></span>;
+  --on-surface: <span class="netural tone90"></span>;
+  --surface-variant: <span class="neutralvariant tone30"></span>;
+  --on-surface-variant: <span class="neutralvariant tone80"></span>;
+  --outline: <span class="neutralvariant tone60"></span>;
+  --background: <span class="netural tone10"></span>;
+  --on-background: <span class="netural tone90"></span>;
+}
+</pre>
+        </div>
+        <div class="tonal-palettes">
+          <h3>Brand</h3>
+          <div class="row">
+            <div class="col brand tone0 text-white">0</div>
+            <div class="col brand tone10 text-white">10</div>
+            <div class="col brand tone20 text-white">20</div>
+            <div class="col brand tone25 text-white">25</div>
+            <div class="col brand tone30 text-white">30</div>
+            <div class="col brand tone35 text-white">35</div>
+            <div class="col brand tone40 text-white">40</div>
+            <div class="col brand tone50 text-white">50</div>
+            <div class="col brand tone60">60</div>
+            <div class="col brand tone70">70</div>
+            <div class="col brand tone80">80</div>
+            <div class="col brand tone90">90</div>
+            <div class="col brand tone95">95</div>
+            <div class="col brand tone98">98</div>
+            <div class="col brand tone99">99</div>
+            <div class="col brand tone100">100</div>
+          </div>
+          <h3>Accent</h3>
+          <div class="row">
+            <div class="col accent tone0 text-white">0</div>
+            <div class="col accent tone10 text-white">10</div>
+            <div class="col accent tone20 text-white">20</div>
+            <div class="col accent tone25 text-white">25</div>
+            <div class="col accent tone30 text-white">30</div>
+            <div class="col accent tone35 text-white">35</div>
+            <div class="col accent tone40 text-white">40</div>
+            <div class="col accent tone50 text-white">50</div>
+            <div class="col accent tone60">60</div>
+            <div class="col accent tone70">70</div>
+            <div class="col accent tone80">80</div>
+            <div class="col accent tone90">90</div>
+            <div class="col accent tone95">95</div>
+            <div class="col accent tone98">98</div>
+            <div class="col accent tone99">99</div>
+            <div class="col accent tone100">100</div>
+          </div>
+          <h3>Positive</h3>
+          <div class="row">
+            <div class="col positive tone0 text-white">0</div>
+            <div class="col positive tone10 text-white">10</div>
+            <div class="col positive tone20 text-white">20</div>
+            <div class="col positive tone25 text-white">25</div>
+            <div class="col positive tone30 text-white">30</div>
+            <div class="col positive tone35 text-white">35</div>
+            <div class="col positive tone40 text-white">40</div>
+            <div class="col positive tone50 text-white">50</div>
+            <div class="col positive tone60">60</div>
+            <div class="col positive tone70">70</div>
+            <div class="col positive tone80">80</div>
+            <div class="col positive tone90">90</div>
+            <div class="col positive tone95">95</div>
+            <div class="col positive tone98">98</div>
+            <div class="col positive tone99">99</div>
+            <div class="col positive tone100">100</div>
+          </div>
+          <h3>Negative</h3>
+          <div class="row">
+            <div class="col negative tone0 text-white">0</div>
+            <div class="col negative tone10 text-white">10</div>
+            <div class="col negative tone20 text-white">20</div>
+            <div class="col negative tone25 text-white">25</div>
+            <div class="col negative tone30 text-white">30</div>
+            <div class="col negative tone35 text-white">35</div>
+            <div class="col negative tone40 text-white">40</div>
+            <div class="col negative tone50 text-white">50</div>
+            <div class="col negative tone60">60</div>
+            <div class="col negative tone70">70</div>
+            <div class="col negative tone80">80</div>
+            <div class="col negative tone90">90</div>
+            <div class="col negative tone95">95</div>
+            <div class="col negative tone98">98</div>
+            <div class="col negative tone99">99</div>
+            <div class="col negative tone100">100</div>
+          </div>
+          <h3>Information</h3>
+          <div class="row">
+            <div class="col information tone0 text-white">0</div>
+            <div class="col information tone10 text-white">10</div>
+            <div class="col information tone20 text-white">20</div>
+            <div class="col information tone25 text-white">25</div>
+            <div class="col information tone30 text-white">30</div>
+            <div class="col information tone35 text-white">35</div>
+            <div class="col information tone40 text-white">40</div>
+            <div class="col information tone50 text-white">50</div>
+            <div class="col information tone60">60</div>
+            <div class="col information tone70">70</div>
+            <div class="col information tone80">80</div>
+            <div class="col information tone90">90</div>
+            <div class="col information tone95">95</div>
+            <div class="col information tone98">98</div>
+            <div class="col information tone99">99</div>
+            <div class="col information tone100">100</div>
+          </div>
+          <h3>Warning</h3>
+          <div class="row">
+            <div class="col warning tone0 text-white">0</div>
+            <div class="col warning tone10 text-white">10</div>
+            <div class="col warning tone20 text-white">20</div>
+            <div class="col warning tone25 text-white">25</div>
+            <div class="col warning tone30 text-white">30</div>
+            <div class="col warning tone35 text-white">35</div>
+            <div class="col warning tone40 text-white">40</div>
+            <div class="col warning tone50 text-white">50</div>
+            <div class="col warning tone60">60</div>
+            <div class="col warning tone70">70</div>
+            <div class="col warning tone80">80</div>
+            <div class="col warning tone90">90</div>
+            <div class="col warning tone95">95</div>
+            <div class="col warning tone98">98</div>
+            <div class="col warning tone99">99</div>
+            <div class="col warning tone100">100</div>
+          </div>
+          <h3>Netural</h3>
+          <div class="row">
+            <div class="col netural tone0 text-white">0</div>
+            <div class="col netural tone10 text-white">10</div>
+            <div class="col netural tone20 text-white">20</div>
+            <div class="col netural tone25 text-white">25</div>
+            <div class="col netural tone30 text-white">30</div>
+            <div class="col netural tone35 text-white">35</div>
+            <div class="col netural tone40 text-white">40</div>
+            <div class="col netural tone50 text-white">50</div>
+            <div class="col netural tone60">60</div>
+            <div class="col netural tone70">70</div>
+            <div class="col netural tone80">80</div>
+            <div class="col netural tone90">90</div>
+            <div class="col netural tone95">95</div>
+            <div class="col netural tone98">98</div>
+            <div class="col netural tone99">99</div>
+            <div class="col netural tone100">100</div>
+          </div>
+          <h3>Neutral-Variant</h3>
+          <div class="row">
+            <div class="col neutralvariant tone0 text-white">0</div>
+            <div class="col neutralvariant tone10 text-white">10</div>
+            <div class="col neutralvariant tone20 text-white">20</div>
+            <div class="col neutralvariant tone25 text-white">25</div>
+            <div class="col neutralvariant tone30 text-white">30</div>
+            <div class="col neutralvariant tone35 text-white">35</div>
+            <div class="col neutralvariant tone40 text-white">40</div>
+            <div class="col neutralvariant tone50 text-white">50</div>
+            <div class="col neutralvariant tone60">60</div>
+            <div class="col neutralvariant tone70">70</div>
+            <div class="col neutralvariant tone80">80</div>
+            <div class="col neutralvariant tone90">90</div>
+            <div class="col neutralvariant tone95">95</div>
+            <div class="col neutralvariant tone98">98</div>
+            <div class="col neutralvariant tone99">99</div>
+            <div class="col neutralvariant tone100">100</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  </body>
+</html>
