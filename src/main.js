@@ -47,7 +47,8 @@ function themeFromSourceColor(brand, accent, information, warning) {
   return result;
 }
 
-function update() {
+function update(e) {
+
   const brand = document.getElementById("brand").value;
   const accent = document.getElementById("accent").value;
   const information = document.getElementById("information").value;
