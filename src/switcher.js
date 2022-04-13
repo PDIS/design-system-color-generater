@@ -6,10 +6,7 @@ import {
 } from "@material/material-color-utilities";
 import "./scss/switcher.scss";
 
-document.body.insertAdjacentHTML(
-  "beforeend",
-  '<button id="switcher" type="button" class="btn btn-secondary switcher">⚙️</button><div id="switcher-content"><button type="button" class="btn-close" id="switcher-close"></button><br><input type="color" class="form-control form-control-color" id="s-brand" value="#2c5ab4" onchange="update(this)"/><p class="d-inline">Brand</p><br><input type="color" class="form-control form-control-color" id="s-accent" value="#705D00" onchange="update(this)"/><p class="d-inline">Accent</p><br><input type="color" class="form-control form-control-color" id="s-information" value="#006687" onchange="update(this)"/><p class="d-inline">Information</p><br><input type="color" class="form-control form-control-color" id="s-warning" value="#A53D00" onchange="update(this)"/><p class="d-inline">Warning</p></div>'
-);
+document.body.insertAdjacentHTML("beforeend", process.env.SWITCHER_HTML);
 
 document.getElementById("switcher").addEventListener("click", () => {
   document.getElementById("switcher-content").style.display = "block";
@@ -17,6 +14,14 @@ document.getElementById("switcher").addEventListener("click", () => {
 
 document.getElementById("switcher-close").addEventListener("click", () => {
   document.getElementById("switcher-content").style.display = "none";
+});
+
+document.getElementById("darkmode").addEventListener("change", (e) => {
+  if (e.target.checked) {
+    document.body.classList.add("darkmode");
+  } else {
+    document.body.classList.remove("darkmode");
+  }
 });
 
 function themeFromSourceColor(brand, accent, information, warning) {
@@ -68,30 +73,121 @@ function update(e) {
   const warning = document.getElementById("s-warning").value;
   const result = themeFromSourceColor(brand, accent, information, warning);
 
-  Object.entries(result.tonalPalettes).forEach(([color_name, tunes]) => {
-    document.documentElement.style.setProperty(`--${color_name}`, tunes.tone40);
-    document.documentElement.style.setProperty(`--${color_name}-strong`, tunes.tone30);
-    document.documentElement.style.setProperty(`--on-${color_name}`, tunes.tone100);
-    document.documentElement.style.setProperty(`--${color_name}-flat`, tunes.tone90);
-    document.documentElement.style.setProperty(`--${color_name}-flat-strong`, tunes.tone80);
-    document.documentElement.style.setProperty(`--on-${color_name}-flat`, tunes.tone10);
-  });
-
-  document.documentElement.style.setProperty(`--background`, result.tonalPalettes.netural.tone99);
-  document.documentElement.style.setProperty(`--on-background`, result.tonalPalettes.netural.tone10);
-  document.documentElement.style.setProperty(`--surface`, result.tonalPalettes.netural.tone99);
-  const surface =result.tonalPalettes.netural.tone99;
+  const surface = result.tonalPalettes.netural.tone99;
   const mask = result.tonalPalettes.brand.tone40;
-  document.documentElement.style.setProperty(`--surface-1`, colorMix(surface, mask, 0.05));
-  document.documentElement.style.setProperty(`--surface-2`, colorMix(surface, mask, 0.08));
-  document.documentElement.style.setProperty(`--surface-3`, colorMix(surface, mask, 0.11));
-  document.documentElement.style.setProperty(`--surface-4`, colorMix(surface, mask, 0.12));
-  document.documentElement.style.setProperty(`--surface-5`, colorMix(surface, mask, 0.14));
-  document.documentElement.style.setProperty(`--on-surface`, result.tonalPalettes.netural.tone10);
-  document.documentElement.style.setProperty(`--surface-variant`, result.tonalPalettes.neutralvariant.tone90);
-  document.documentElement.style.setProperty(`--on-surface-variant`, result.tonalPalettes.neutralvariant.tone30);
-  document.documentElement.style.setProperty(`--outline`, result.tonalPalettes.neutralvariant.tone50);
+  const d_surface = result.tonalPalettes.netural.tone10;
+  const d_mask = result.tonalPalettes.brand.tone80;
 
+  try {
+    document.getElementById("color").remove();
+  } catch(e) {}
+  var css = document.createElement("style");
+  css.id = "color";
+  css.appendChild(
+    document.createTextNode(`
+  :root {
+    --brand: ${result.tonalPalettes.brand.tone40};
+    --brand-strong: ${result.tonalPalettes.brand.tone30};
+    --on-brand: ${result.tonalPalettes.brand.tone100};
+    --brand-flat: ${result.tonalPalettes.brand.tone90};
+    --brand-flat-strong: ${result.tonalPalettes.brand.tone80};
+    --on-brand-flat: ${result.tonalPalettes.brand.tone10};
+    --accent: ${result.tonalPalettes.accent.tone40};
+    --accent-strong: ${result.tonalPalettes.accent.tone30};
+    --on-accent: ${result.tonalPalettes.accent.tone100};
+    --accent-flat: ${result.tonalPalettes.accent.tone90};
+    --accent-flat-strong: ${result.tonalPalettes.accent.tone80};
+    --on-accent-flat: ${result.tonalPalettes.accent.tone10};
+    --positive: ${result.tonalPalettes.positive.tone40};
+    --positive-strong: ${result.tonalPalettes.positive.tone30};
+    --on-positive: ${result.tonalPalettes.positive.tone100};
+    --positive-flat: ${result.tonalPalettes.positive.tone90};
+    --positive-flat-strong: ${result.tonalPalettes.positive.tone80};
+    --on-positive-flat: ${result.tonalPalettes.positive.tone10};
+    --negative: ${result.tonalPalettes.negative.tone40};
+    --negative-strong: ${result.tonalPalettes.negative.tone30};
+    --on-negative: ${result.tonalPalettes.negative.tone100};
+    --negative-flat: ${result.tonalPalettes.negative.tone90};
+    --negative-flat-strong: ${result.tonalPalettes.negative.tone80};
+    --on-negative-flat: ${result.tonalPalettes.negative.tone10};
+    --information: ${result.tonalPalettes.information.tone40};
+    --information-strong: ${result.tonalPalettes.information.tone30};
+    --on-information: ${result.tonalPalettes.information.tone100};
+    --information-flat: ${result.tonalPalettes.information.tone90};
+    --information-flat-strong: ${result.tonalPalettes.information.tone80};
+    --on-information-flat: ${result.tonalPalettes.information.tone10};
+    --warning: ${result.tonalPalettes.warning.tone40};
+    --warning-strong: ${result.tonalPalettes.warning.tone30};
+    --on-warning: ${result.tonalPalettes.warning.tone100};
+    --warning-flat: ${result.tonalPalettes.warning.tone90};
+    --warning-flat-strong: ${result.tonalPalettes.warning.tone80};
+    --on-warning-flat: ${result.tonalPalettes.warning.tone10};
+    --surface: ${result.tonalPalettes.netural.tone99};
+    --surface-1: ${colorMix(surface, mask, 0.05)};
+    --surface-2: ${colorMix(surface, mask, 0.08)};
+    --surface-3: ${colorMix(surface, mask, 0.11)};
+    --surface-4: ${colorMix(surface, mask, 0.12)};
+    --surface-5: ${colorMix(surface, mask, 0.14)};
+    --on-surface: ${result.tonalPalettes.netural.tone10};
+    --surface-variant: ${result.tonalPalettes.neutralvariant.tone90};
+    --on-surface-variant: ${result.tonalPalettes.neutralvariant.tone30};
+    --outline: ${result.tonalPalettes.neutralvariant.tone50};
+    --background: ${result.tonalPalettes.netural.tone99};
+    --on-background: ${result.tonalPalettes.netural.tone10};
+  }
+  .darkmode {
+    --brand: ${result.tonalPalettes.brand.tone80};
+    --brand-strong: ${result.tonalPalettes.brand.tone90};
+    --on-brand: ${result.tonalPalettes.brand.tone20};
+    --brand-flat: ${result.tonalPalettes.brand.tone30};
+    --brand-flat-strong: ${result.tonalPalettes.brand.tone20};
+    --on-brand-flat: ${result.tonalPalettes.brand.tone90};
+    --accent: ${result.tonalPalettes.accent.tone80};
+    --accent-strong: ${result.tonalPalettes.accent.tone90};
+    --on-accent: ${result.tonalPalettes.accent.tone20};
+    --accent-flat: ${result.tonalPalettes.accent.tone30};
+    --accent-flat-strong: ${result.tonalPalettes.accent.tone20};
+    --on-accent-flat: ${result.tonalPalettes.accent.tone90};
+    --positive: ${result.tonalPalettes.positive.tone80};
+    --positive-strong: ${result.tonalPalettes.positive.tone90};
+    --on-positive: ${result.tonalPalettes.positive.tone20};
+    --positive-flat: ${result.tonalPalettes.positive.tone30};
+    --positive-flat-strong: ${result.tonalPalettes.positive.tone20};
+    --on-positive-flat: ${result.tonalPalettes.positive.tone90};
+    --negative: ${result.tonalPalettes.negative.tone80};
+    --negative-strong: ${result.tonalPalettes.negative.tone90};
+    --on-negative: ${result.tonalPalettes.negative.tone20};
+    --negative-flat: ${result.tonalPalettes.negative.tone30};
+    --negative-flat-strong: ${result.tonalPalettes.negative.tone20};
+    --on-negative-flat: ${result.tonalPalettes.negative.tone90};
+    --information: ${result.tonalPalettes.information.tone80};
+    --information-strong: ${result.tonalPalettes.information.tone90};
+    --on-information: ${result.tonalPalettes.information.tone20};
+    --information-flat: ${result.tonalPalettes.information.tone30};
+    --information-flat-strong: ${result.tonalPalettes.information.tone20};
+    --on-information-flat: ${result.tonalPalettes.information.tone90};
+    --warning: ${result.tonalPalettes.warning.tone80};
+    --warning-strong: ${result.tonalPalettes.warning.tone90};
+    --on-warning: ${result.tonalPalettes.warning.tone20};
+    --warning-flat: ${result.tonalPalettes.warning.tone30};
+    --warning-flat-strong: ${result.tonalPalettes.warning.tone20};
+    --on-warning-flat: ${result.tonalPalettes.warning.tone90};
+    --surface: ${result.tonalPalettes.netural.tone10};
+    --surface-1: ${colorMix(d_surface, d_mask, 0.05)};
+    --surface-2: ${colorMix(d_surface, d_mask, 0.08)};
+    --surface-3: ${colorMix(d_surface, d_mask, 0.11)};
+    --surface-4: ${colorMix(d_surface, d_mask, 0.12)};
+    --surface-5: ${colorMix(d_surface, d_mask, 0.14)};
+    --on-surface: ${result.tonalPalettes.netural.tone90};
+    --surface-variant: ${result.tonalPalettes.neutralvariant.tone30};
+    --on-surface-variant: ${result.tonalPalettes.neutralvariant.tone80};
+    --outline: ${result.tonalPalettes.neutralvariant.tone60};
+    --background: ${result.tonalPalettes.netural.tone10};
+    --on-background: ${result.tonalPalettes.netural.tone90};
+  }
+  `)
+  );
+  document.body.appendChild(css);
 }
 
 function colorMix(bg, mask, optical) {

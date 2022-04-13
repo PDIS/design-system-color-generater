@@ -1,0 +1,48 @@
+<button id="switcher" type="button" class="btn btn-secondary switcher">
+  ⚙️
+</button>
+<div id="switcher-content">
+  <button type="button" class="btn-close" id="switcher-close"></button>
+  <br />
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="" id="darkmode">
+    <label class="form-check-label" for="darkmode">
+      Darkmode
+    </label>
+  </div>
+  <input
+    type="color"
+    class="form-control form-control-color"
+    id="s-brand"
+    value="#2c5ab4"
+    onchange="update(this)"
+  />
+  <p class="d-inline">Brand</p>
+  <br />
+  <input
+    type="color"
+    class="form-control form-control-color"
+    id="s-accent"
+    value="#705D00"
+    onchange="update(this)"
+  />
+  <p class="d-inline">Accent</p>
+  <br />
+  <input
+    type="color"
+    class="form-control form-control-color"
+    id="s-information"
+    value="#006687"
+    onchange="update(this)"
+  />
+  <p class="d-inline">Information</p>
+  <br />
+  <input
+    type="color"
+    class="form-control form-control-color"
+    id="s-warning"
+    value="#A53D00"
+    onchange="update(this)"
+  />
+  <p class="d-inline">Warning</p>
+</div>
