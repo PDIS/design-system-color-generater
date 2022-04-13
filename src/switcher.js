@@ -134,7 +134,7 @@ function update(e) {
     --outline: ${result.tonalPalettes.neutralvariant.tone50};
     --background: ${result.tonalPalettes.netural.tone99};
     --on-background: ${result.tonalPalettes.netural.tone10};
-    --bs-background:  ${result.tonalPalettes.netural.tone99};
+    --bs-body-bg: ${result.tonalPalettes.netural.tone99};
   }
   .darkmode {
     --brand: ${result.tonalPalettes.brand.tone80};
@@ -185,7 +185,7 @@ function update(e) {
     --outline: ${result.tonalPalettes.neutralvariant.tone60};
     --background: ${result.tonalPalettes.netural.tone10};
     --on-background: ${result.tonalPalettes.netural.tone90};
-    --bs-background:  ${result.tonalPalettes.netural.tone10};
+    --bs-body-bg:  ${result.tonalPalettes.netural.tone10};
   }
   `)
   );
