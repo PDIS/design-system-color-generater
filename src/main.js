@@ -13,18 +13,10 @@ function themeFromSourceColor(brand, accent, information, warning) {
   };
 
   const brand_core = CorePalette.of(argbFromHex(brand));
-  const accent_core = CorePalette.of(
-    Blend.harmonize(argbFromHex(accent), argbFromHex(brand))
-  );
-  const positive_core = CorePalette.of(
-    Blend.harmonize(argbFromHex("#286B2A"), argbFromHex(brand))
-  );
-  const information_core = CorePalette.of(
-    Blend.harmonize(argbFromHex(information), argbFromHex(brand))
-  );
-  const warning_core = CorePalette.of(
-    Blend.harmonize(argbFromHex(warning), argbFromHex(brand))
-  );
+  const accent_core = CorePalette.of(argbFromHex(accent));
+  const positive_core = CorePalette.of(argbFromHex("#286B2A"));
+  const information_core = CorePalette.of(argbFromHex(information));
+  const warning_core = CorePalette.of(argbFromHex(warning));
   const colors = {
     brand: brand_core.a1,
     accent: accent_core.a1,
