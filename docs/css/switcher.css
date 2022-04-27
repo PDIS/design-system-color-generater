@@ -1,1 +1,1 @@
-#switcher{position:fixed;right:-0.25rem;top:5rem}#switcher-content{display:none;width:250px;position:fixed;right:0rem;top:4.5rem;background-color:#d3d3d3;padding:1rem}#switcher-content p{margin-left:1rem;font-size:1.25rem}
+#switcher{position:fixed;right:-0.25rem;top:5rem;background-color:#d3d3d3}#switcher-content{display:none;width:250px;position:fixed;right:0rem;top:0;background-color:#d3d3d3;padding:1rem}#switcher-content p{margin-left:1rem;font-size:1.25rem}#switcher-content input{display:inline-flex}
