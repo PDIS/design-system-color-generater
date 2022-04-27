@@ -40,7 +40,6 @@ function themeFromSourceColor(brand, accent, information, warning) {
 }
 
 function update(e) {
-
   const brand = document.getElementById("brand").value;
   const accent = document.getElementById("accent").value;
   const information = document.getElementById("information").value;
@@ -82,15 +81,9 @@ function colorMix(bg, mask, optical) {
   const alpha = 1 - optical;
   bg = hexToRGB(bg);
   mask = hexToRGB(mask);
-  const red = Math.round(
-    (optical * (mask.red / 255) + alpha * (bg.red / 255)) * 255
-  );
-  const green = Math.round(
-    (optical * (mask.green / 255) + alpha * (bg.green / 255)) * 255
-  );
-  const blue = Math.round(
-    (optical * (mask.blue / 255) + alpha * (bg.blue / 255)) * 255
-  );
+  const red = Math.floor(optical * mask.red + alpha * bg.red);
+  const green = Math.floor(optical * mask.green + alpha * bg.green);
+  const blue =Math.floor(optical * mask.blue + alpha * bg.blue);
   return rgbToHex(red, green, blue);
 }
 
@@ -102,7 +95,7 @@ function hexToRGB(hex) {
   };
 }
 function rgbToHex(r, g, b) {
-  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  return "#" + ((r << 16) + (g << 8) + b).toString(16);
 }
 
 window.update = function () {

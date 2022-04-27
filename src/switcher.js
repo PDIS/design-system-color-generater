@@ -30,7 +30,7 @@ function themeFromSourceColor(brand, accent, information, warning) {
     light: {},
     dark: {},
   };
-  
+
   const brand_core = CorePalette.of(argbFromHex(brand));
   const accent_core = CorePalette.of(argbFromHex(accent));
   const positive_core = CorePalette.of(argbFromHex("#286B2A"));
@@ -133,37 +133,37 @@ function update(e) {
     --brand-strong: ${result.tonalPalettes.brand.tone90};
     --on-brand: ${result.tonalPalettes.brand.tone20};
     --brand-flat: ${result.tonalPalettes.brand.tone30};
-    --brand-flat-strong: ${result.tonalPalettes.brand.tone20};
+    --brand-flat-strong: ${result.tonalPalettes.brand.tone40};
     --on-brand-flat: ${result.tonalPalettes.brand.tone90};
     --accent: ${result.tonalPalettes.accent.tone80};
     --accent-strong: ${result.tonalPalettes.accent.tone90};
     --on-accent: ${result.tonalPalettes.accent.tone20};
     --accent-flat: ${result.tonalPalettes.accent.tone30};
-    --accent-flat-strong: ${result.tonalPalettes.accent.tone20};
+    --accent-flat-strong: ${result.tonalPalettes.accent.tone40};
     --on-accent-flat: ${result.tonalPalettes.accent.tone90};
     --positive: ${result.tonalPalettes.positive.tone80};
     --positive-strong: ${result.tonalPalettes.positive.tone90};
     --on-positive: ${result.tonalPalettes.positive.tone20};
     --positive-flat: ${result.tonalPalettes.positive.tone30};
-    --positive-flat-strong: ${result.tonalPalettes.positive.tone20};
+    --positive-flat-strong: ${result.tonalPalettes.positive.tone40};
     --on-positive-flat: ${result.tonalPalettes.positive.tone90};
     --negative: ${result.tonalPalettes.negative.tone80};
     --negative-strong: ${result.tonalPalettes.negative.tone90};
     --on-negative: ${result.tonalPalettes.negative.tone20};
     --negative-flat: ${result.tonalPalettes.negative.tone30};
-    --negative-flat-strong: ${result.tonalPalettes.negative.tone20};
+    --negative-flat-strong: ${result.tonalPalettes.negative.tone40};
     --on-negative-flat: ${result.tonalPalettes.negative.tone90};
     --information: ${result.tonalPalettes.information.tone80};
     --information-strong: ${result.tonalPalettes.information.tone90};
     --on-information: ${result.tonalPalettes.information.tone20};
     --information-flat: ${result.tonalPalettes.information.tone30};
-    --information-flat-strong: ${result.tonalPalettes.information.tone20};
+    --information-flat-strong: ${result.tonalPalettes.information.tone40};
     --on-information-flat: ${result.tonalPalettes.information.tone90};
     --warning: ${result.tonalPalettes.warning.tone80};
     --warning-strong: ${result.tonalPalettes.warning.tone90};
     --on-warning: ${result.tonalPalettes.warning.tone20};
     --warning-flat: ${result.tonalPalettes.warning.tone30};
-    --warning-flat-strong: ${result.tonalPalettes.warning.tone20};
+    --warning-flat-strong: ${result.tonalPalettes.warning.tone40};
     --on-warning-flat: ${result.tonalPalettes.warning.tone90};
     --surface: ${result.tonalPalettes.netural.tone10};
     --surface-1: ${colorMix(d_surface, d_mask, 0.05)};
