@@ -39,7 +39,7 @@ function themeFromSourceColor(brand, accent, information, warning) {
   return result;
 }
 
-function update(e) {
+function update_color() {
   const brand = document.getElementById("brand").value;
   const accent = document.getElementById("accent").value;
   const information = document.getElementById("information").value;
@@ -98,7 +98,7 @@ function rgbToHex(r, g, b) {
   return "#" + ((r << 16) + (g << 8) + b).toString(16);
 }
 
-window.update = function () {
-  update();
+window.update_color = function () {
+  update_color();
 };
-update();
+update_color();
